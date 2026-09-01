@@ -1,0 +1,11 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# Large MediaPipe downloaded weights
+*.task

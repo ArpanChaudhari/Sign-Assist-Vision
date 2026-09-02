@@ -15,7 +15,7 @@ RunningMode = mp.tasks.vision.RunningMode
 # Set options for hand detection
 options = HandLandmarkerOptions(
     # Path of the MediaPipe hand detection model
-    base_options=BaseOptions(model_asset_path="hand_landmarker.task"),
+    base_options=BaseOptions(model_asset_path="models/hand_landmarker.task"),
     # We are detecting hands from individual images
     running_mode=RunningMode.IMAGE,
     # Detect only one hand
@@ -25,7 +25,7 @@ options = HandLandmarkerOptions(
 
 # 2. Create a CSV file to store hand landmarks and gesture labels
 
-csv_file_name = "hand_data.csv"
+csv_file_name = "data/hand_data.csv"
 
 
 # Create the CSV file only if it does not already exist

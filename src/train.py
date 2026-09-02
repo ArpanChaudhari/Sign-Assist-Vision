@@ -11,7 +11,7 @@ from torch.utils.data import DataLoader, TensorDataset
 # 1. Load the hand gesture data
 
 # Read the CSV file created by collect_data.py
-data = pd.read_csv("hand_data.csv")
+data = pd.read_csv("data/hand_data.csv")
 
 # Get all 63 hand landmark coordinates
 X = data.drop("label", axis=1).values
@@ -32,7 +32,7 @@ y_encoded = encoder.fit_transform(y)
 num_classes = len(encoder.classes_)
 
 # Save the class names for later use in app.py
-np.save("classes.npy", encoder.classes_)
+np.save("models/classes.npy", encoder.classes_)
 
 
 # 3. Convert data into PyTorch tensors
@@ -165,7 +165,7 @@ for epoch in range(epochs):
 # Save only the learned model weights
 torch.save(
     model.state_dict(),
-    "model.pth"
+    "models/model.pth"
 )
 
 

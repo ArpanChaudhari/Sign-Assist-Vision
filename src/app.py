@@ -19,9 +19,9 @@ class SignModel(nn.Module):
         return self.net(x)
 
 # 2. Load classes and trained model
-classes = np.load('classes.npy', allow_pickle=True)
+classes = np.load('models/classes.npy', allow_pickle=True)
 model = SignModel(len(classes))
-model.load_state_dict(torch.load('model.pth'))
+model.load_state_dict(torch.load('models/model.pth'))
 model.eval()
 
 # 3. Setup the New MediaPipe Tasks API
@@ -31,7 +31,7 @@ HandLandmarkerOptions = mp.tasks.vision.HandLandmarkerOptions
 VisionRunningMode = mp.tasks.vision.RunningMode
 
 options = HandLandmarkerOptions(
-    base_options=BaseOptions(model_asset_path='hand_landmarker.task'),
+    base_options=BaseOptions(model_asset_path='models/hand_landmarker.task'),
     running_mode=VisionRunningMode.IMAGE,
     num_hands=1
 )

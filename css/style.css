@@ -1,0 +1,30 @@
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+.gradient-border {
+    background: linear-gradient(135deg, #14b8a6 0%, #6366f1 100%);
+}
+
+/* Subtle entrance animation for the cards */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth transition for the placeholder */
+.placeholder-transition {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
